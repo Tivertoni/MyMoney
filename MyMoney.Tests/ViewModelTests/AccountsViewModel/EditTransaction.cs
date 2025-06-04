@@ -116,7 +116,7 @@ namespace MyMoney.Tests.ViewModelTests.AccountsViewModel
                 .ReturnsAsync(ContentDialogResult.Primary);
             _transactionDialogService
                 .Setup(x => x.GetViewModel())
-                .Returns(new NewTransactionDialogViewModel()
+                .Returns(new NewTransactionDialogViewModel
                 {
                     NewTransactionAmount = new Currency(200),
                     NewTransactionIsExpense = true,

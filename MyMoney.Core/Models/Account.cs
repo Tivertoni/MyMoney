@@ -1,7 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 
 namespace MyMoney.Core.Models
 {

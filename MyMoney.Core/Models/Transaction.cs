@@ -1,6 +1,4 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.ComponentModel;
 
 namespace MyMoney.Core.Models;
 
@@ -21,26 +19,25 @@ public partial class Transaction(DateTime date, string payee, Category category,
     [ObservableProperty]
     private DateTime _date = date;
 
-    public string DateFormatted
-    {
-        get { return Date.ToShortDateString(); }
-    }
+    public string DateFormatted => Date.ToShortDateString();
 
-    public string MonthAbbreviated
-    {
-        get { return Date.ToString("MMM"); }
-    }
+    public string MonthAbbreviated => Date.ToString("MMM");
 
     public string AmountFormatted
     {
         get
         {
             if (Amount.Value > 0m)
-                return "+" + Amount.ToString();
-            else if (Amount.Value < 0m)
-                return "-" + new Currency(Math.Abs(Amount.Value)).ToString();
-            else
+            {
+                return "+" + Amount;
+            }
+
+            if (Amount.Value == 0m)
+            {
                 return "$0.00";
+            }
+
+            return "-" + new Currency(Math.Abs(Amount.Value));
         }
     }
 }

@@ -18,26 +18,20 @@ namespace MyMoney.Core.Database
 
         public BudgetCollection(IDatabaseReader databaseReader)
         {
-            var budgetsInDatabase = databaseReader.GetCollection<Budget>(BudgetCollectionName);
-            if (budgetsInDatabase != null)
+            List<Budget> budgetsInDatabase = databaseReader.GetCollection<Budget>(BudgetCollectionName);
+            foreach (Budget budget in budgetsInDatabase)
             {
-                foreach (var budget in budgetsInDatabase)
+                foreach (BudgetItem incomeItem in budget.BudgetIncomeItems)
                 {
-                    if (budget != null) 
-                    { 
-                        foreach (var incomeItem in budget.BudgetIncomeItems)
-                        {
-                            incomeItem.Category ??= string.Empty;
-                        }
-
-                        foreach (var expenseItem in budget.BudgetExpenseItems)
-                        {
-                            expenseItem.CategoryName ??= string.Empty;
-                        }
-
-                        Budgets.Add(budget);
-                    }
+                    incomeItem.Category ??= string.Empty;
                 }
+
+                foreach (BudgetExpenseCategory expenseItem in budget.BudgetExpenseItems)
+                {
+                    expenseItem.CategoryName ??= string.Empty;
+                }
+
+                Budgets.Add(budget);
             }
         }
 

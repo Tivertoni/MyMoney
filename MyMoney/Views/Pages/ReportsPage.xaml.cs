@@ -1,6 +1,5 @@
 ﻿using MyMoney.ViewModels.Pages;
 using System.Windows.Controls;
-using Wpf.Ui.Appearance;
 
 namespace MyMoney.Views.Pages
 {

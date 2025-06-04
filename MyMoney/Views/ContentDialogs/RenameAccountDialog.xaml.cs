@@ -1,5 +1,4 @@
 ﻿using MyMoney.ViewModels.ContentDialogs;
-using System;
 using System.Windows.Controls;
 using Wpf.Ui.Controls;
 

@@ -12,9 +12,7 @@ using System.ComponentModel;
 using MyMoney.ViewModels.ContentDialogs;
 using Wpf.Ui;
 using MyMoney.Services.ContentDialogs;
-using System.Linq.Expressions;
 using MyMoney.Core.Reports;
-using System.Linq;
 using System.Windows.Data;
 
 namespace MyMoney.ViewModels.Pages

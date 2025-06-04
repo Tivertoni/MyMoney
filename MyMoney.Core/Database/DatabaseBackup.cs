@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace MyMoney.Core.Database
+﻿namespace MyMoney.Core.Database
 {
     public static class DatabaseBackup
     {

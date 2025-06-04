@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace MyMoney.Core.Models
+﻿namespace MyMoney.Core.Models
 {
     public class Currency(decimal value)
     {
@@ -10,12 +8,10 @@ namespace MyMoney.Core.Models
         {
             if (this.Value >= 0m)
             {
-                return $"${this.Value:N2}";
+                return $"${Value:N2}";
             }
-            else
-            {
-                return $"(${Math.Abs(this.Value):N2})";
-            }
+
+            return $"(${Math.Abs(Value):N2})";
         }
 
         public static Currency operator +(Currency c1, Currency c2)
