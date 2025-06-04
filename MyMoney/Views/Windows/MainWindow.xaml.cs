@@ -194,10 +194,10 @@ namespace MyMoney.Views.Windows
                                     File.Delete(file);
                                 }
                                 catch { /* Fail silently, it's not important that the file is deleted*/ }
-                                }
                             }
                         }
                     }
+                }
             }
         }
     }
