@@ -8,10 +8,10 @@ namespace MyMoney.ViewModels.ContentDialogs
         public ObservableCollection<string> Accounts { get; } = accountNames;
 
         [ObservableProperty]
-        private string _transferFrom = "";
+        private string _transferFrom = string.Empty;
 
         [ObservableProperty]
-        private string _transferTo = "";
+        private string _transferTo = string.Empty;
 
         [ObservableProperty]
         private Currency _amount = new(0m);

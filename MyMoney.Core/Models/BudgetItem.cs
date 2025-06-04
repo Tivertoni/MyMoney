@@ -13,7 +13,7 @@ namespace MyMoney.Core.Models
         private int _id = 0;
 
         [ObservableProperty]
-        private string _category = "";
+        private string _category = string.Empty;
 
         [ObservableProperty]
         private Currency _amount = new(0m);

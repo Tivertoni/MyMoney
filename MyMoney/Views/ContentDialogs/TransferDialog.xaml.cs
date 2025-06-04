@@ -44,8 +44,8 @@ namespace MyMoney.Views.ContentDialogs
 
             // get validation errors for all the required fields
             var amountValidationErrors = Validation.GetErrors(txtAmount);
-            var fromHasErrors = cmbFrom.Text == "" || cmbFrom.Text == cmbTo.Text;
-            var toHasErrors = cmbTo.Text == "" || cmbFrom.Text == cmbTo.Text;
+            var fromHasErrors = cmbFrom.Text == string.Empty || cmbFrom.Text == cmbTo.Text;
+            var toHasErrors = cmbTo.Text == string.Empty || cmbFrom.Text == cmbTo.Text;
 
             // Clear the red border from custom validated controls
             cmbFromBorder.BorderBrush = Brushes.Transparent;

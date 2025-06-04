@@ -106,7 +106,7 @@ namespace MyMoney.Views.Windows
             var settingsDict = databaseReader.GetSettingsDictionary("ApplicationSettings");
 
             BackupModeRadioButtonGroup BackupMode = BackupModeRadioButtonGroup.Manual;
-            string BackupLocation = "";
+            string BackupLocation = string.Empty;
             SettingsViewModel.BackupStorageDuration BackupStorageDuration = SettingsViewModel.BackupStorageDuration.OneWeek;
 
             // Extract the settings values
@@ -134,7 +134,7 @@ namespace MyMoney.Views.Windows
             }
 
             // Write backup
-            if (BackupMode == BackupModeRadioButtonGroup.Automatic && backupLocation != "")
+            if (BackupMode == BackupModeRadioButtonGroup.Automatic && backupLocation != string.Empty)
             {
                 // Backup
                 DatabaseBackup.WriteDatabaseBackup(Path.Combine(BackupLocation, $"mymoney-database-backup-{DateTime.Now.ToString("MM-dd-yyyy")}.db"));

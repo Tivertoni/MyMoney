@@ -27,12 +27,12 @@ namespace MyMoney.Core.Database
                     { 
                         foreach (var incomeItem in budget.BudgetIncomeItems)
                         {
-                            incomeItem.Category ??= "";
+                            incomeItem.Category ??= string.Empty;
                         }
 
                         foreach (var expenseItem in budget.BudgetExpenseItems)
                         {
-                            expenseItem.CategoryName ??= "";
+                            expenseItem.CategoryName ??= string.Empty;
                         }
 
                         Budgets.Add(budget);

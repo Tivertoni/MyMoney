@@ -9,7 +9,7 @@ namespace MyMoney.Core.Models
         private int _id;
 
         [ObservableProperty]
-        private string _budgetTitle = "";
+        private string _budgetTitle = string.Empty;
 
         [ObservableProperty]
         private DateTime _budgetDate;

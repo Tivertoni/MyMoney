@@ -23,7 +23,7 @@ namespace MyMoney.Services.ContentDialogs
     {
         NewTransactionDialogViewModel _viewModel = new();
         string _title = "New Transaction";
-        string _selectedPayee = "";
+        string _selectedPayee = string.Empty;
 
         public string GetSelectedPayee()
         {

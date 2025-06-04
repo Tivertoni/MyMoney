@@ -50,7 +50,7 @@ namespace MyMoney.Views.ContentDialogs
         {
             get
             {
-                return new() { Name = cmbCategory.SelectedItem?.Item.ToString() ?? "", Group = cmbCategory.SelectedItem?.Group ?? ""};
+                return new() { Name = cmbCategory.SelectedItem?.Item.ToString() ?? string.Empty, Group = cmbCategory.SelectedItem?.Group ?? string.Empty};
             }
         }
 
@@ -93,7 +93,7 @@ namespace MyMoney.Views.ContentDialogs
             // get validation errors for all the required fields
             var amountValidationErrors = Validation.GetErrors(txtAmount);
             var dateValidationErrors = Validation.GetErrors(txtDate);
-            var invalidPayee = txtPayee.Text == "";
+            var invalidPayee = txtPayee.Text == string.Empty;
             var invalidCategory = cmbCategory.SelectedIndex == -1;
 
             // Clear the red border from custom validated controls

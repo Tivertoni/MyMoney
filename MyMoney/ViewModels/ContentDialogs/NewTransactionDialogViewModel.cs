@@ -15,13 +15,13 @@ namespace MyMoney.ViewModels.ContentDialogs
         private DateTime _newTransactionDate = DateTime.Today;
 
         [ObservableProperty]
-        private string _newTransactionPayee = "";
+        private string _newTransactionPayee = string.Empty;
 
         [ObservableProperty]
         private Category _newTransactionCategory = new();
 
         [ObservableProperty]
-        private string _newTransactionMemo = "";
+        private string _newTransactionMemo = string.Empty;
 
         [ObservableProperty]
         private Currency _newTransactionAmount = new(0m);

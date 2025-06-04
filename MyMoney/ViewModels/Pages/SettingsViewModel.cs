@@ -16,7 +16,7 @@ namespace MyMoney.ViewModels.Pages
         private BackupModeRadioButtonGroup _backupMode = BackupModeRadioButtonGroup.Manual;
 
         [ObservableProperty]
-        private string _backupLocation = "";
+        private string _backupLocation = string.Empty;
 
         private bool _isInitialized;
 

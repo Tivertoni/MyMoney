@@ -14,7 +14,7 @@ namespace MyMoney.Core.Models
         private int _id = 0;
 
         [ObservableProperty]
-        private string _categoryName = "";
+        private string _categoryName = string.Empty;
 
         [ObservableProperty]
         private ObservableCollection<BudgetItem> _subItems = [];

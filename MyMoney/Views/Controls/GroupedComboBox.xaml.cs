@@ -107,7 +107,7 @@ namespace MyMoney.Views.Controls
                 }
                 else
                 {
-                    return SelectedItem?.Item.ToString() ?? "";
+                    return SelectedItem?.Item.ToString() ?? string.Empty;
                 }
             }
         } 
@@ -134,8 +134,8 @@ namespace MyMoney.Views.Controls
 
         public class GroupedComboBoxItem
         {
-            public string Group { get; set; } = "";
-            public object Item { get; set; } = "";
+            public string Group { get; set; } = string.Empty;
+            public object Item { get; set; } = string.Empty;
         }
 
         private void dropdownButton_Click(object sender, RoutedEventArgs e)
