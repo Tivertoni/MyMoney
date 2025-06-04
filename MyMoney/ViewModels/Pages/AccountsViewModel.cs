@@ -260,15 +260,15 @@ namespace MyMoney.ViewModels.Pages
 
             if (result == ContentDialogResult.Primary)
             {
-                // Make sure that the amount being transfered does not exceed the balance
-                // of the account that it is comming from.
+                // Make sure that the amount being transferred does not exceed the balance
+                // of the account that it is coming from.
 
                 foreach (var t in Accounts)
                 {
                     if (t.AccountName == viewModel.TransferFrom && viewModel.Amount.Value > t.Total.Value)
                     {
                         await _messageBoxService.ShowInfoAsync("Error",
-                            "The amount being transfered exceeds the balance of the account it is from.",
+                            "The amount being transferred exceeds the balance of the account it is from.",
                             "OK");
                         return;
                     }
@@ -288,12 +288,12 @@ namespace MyMoney.ViewModels.Pages
                 {
                     if (t.AccountName == viewModel.TransferFrom)
                     {
-                        // Make sure that the amount being transfered does not exceed the balance
-                        // of the account that it is comming from.
+                        // Make sure that the amount being transferred does not exceed the balance
+                        // of the account that it is coming from.
                         if (Math.Abs(from.Amount.Value) > t.Total.Value)
                         {
                             await _messageBoxService.ShowInfoAsync("Error",
-                                "The amount being transfered exceeds the balance of the account it is from.",
+                                "The amount being transferred exceeds the balance of the account it is from.",
                                 "OK");
                             return;
                         }
