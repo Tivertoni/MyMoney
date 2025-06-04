@@ -39,9 +39,9 @@ namespace MyMoney.Views.Windows
             Core.Database.DatabaseReader dbReader = new();
             var SettingsDict = dbReader.GetSettingsDictionary("ApplicationSettings");
 
-            if (SettingsDict != null && SettingsDict.Count > 0 && SettingsDict.ContainsKey("AppTheme"))
+            if (SettingsDict.Count > 0 && SettingsDict.TryGetValue("AppTheme", out string? value))
             {
-                if (SettingsDict["AppTheme"] == "Light")
+                if (value == "Light")
                 {
                     ApplicationThemeManager.Apply(ApplicationTheme.Light);
 
