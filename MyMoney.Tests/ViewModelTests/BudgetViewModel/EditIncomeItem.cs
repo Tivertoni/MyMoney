@@ -59,12 +59,12 @@ public class EditIncomeItemTests
     {
         // Arrange
         _viewModel.IncomeItemsSelectedIndex = 0;
-        var newCategory = "Updated Income";
+        const string NEW_CATEGORY = "Updated Income";
         var newAmount = new Currency(2000m);
 
         var dialogViewModel = new BudgetCategoryDialogViewModel
         {
-            BudgetCategory = newCategory,
+            BudgetCategory = NEW_CATEGORY,
             BudgetAmount = newAmount
         };
 
@@ -80,7 +80,7 @@ public class EditIncomeItemTests
         await _viewModel.EditIncomeItemCommand.ExecuteAsync(null);
 
         // Assert
-        Assert.AreEqual(newCategory, _viewModel.CurrentBudget!.BudgetIncomeItems[0].Category);
+        Assert.AreEqual(NEW_CATEGORY, _viewModel.CurrentBudget!.BudgetIncomeItems[0].Category);
         Assert.AreEqual(newAmount.Value, _viewModel.CurrentBudget.BudgetIncomeItems[0].Amount.Value);
         Assert.AreEqual(newAmount.Value, _viewModel.IncomeTotal.Value);
     }

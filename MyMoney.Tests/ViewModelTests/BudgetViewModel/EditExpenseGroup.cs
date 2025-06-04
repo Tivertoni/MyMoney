@@ -56,9 +56,9 @@ namespace MyMoney.Tests.ViewModelTests.BudgetViewModel
         {
             // Arrange
             var parameter = new BudgetExpenseCategory { CategoryName = "Old Name" };
-            var newName = "New Group Name";
+            const string NEW_NAME = "New Group Name";
 
-            var viewModel = new NewExpenseGroupDialogViewModel { GroupName = newName };
+            var viewModel = new NewExpenseGroupDialogViewModel { GroupName = NEW_NAME };
             _mockExpenseGroupDialogService.Setup(x => x.GetViewModel()).Returns(viewModel);
             _mockExpenseGroupDialogService.Setup(x => x.ShowDialogAsync(
                 _mockContentDialogService.Object, 
@@ -70,7 +70,7 @@ namespace MyMoney.Tests.ViewModelTests.BudgetViewModel
             await _viewModel.EditExpenseGroupCommand.ExecuteAsync(parameter);
 
             // Assert
-            Assert.AreEqual(newName, parameter.CategoryName);
+            Assert.AreEqual(NEW_NAME, parameter.CategoryName);
             _mockExpenseGroupDialogService.Verify(x => x.ShowDialogAsync(
                 _mockContentDialogService.Object, 
                 "Edit Group Name",
@@ -82,8 +82,8 @@ namespace MyMoney.Tests.ViewModelTests.BudgetViewModel
         public async Task EditExpenseGroup_WhenDialogReturnsSecondary_DoesNotUpdateGroupName()
         {
             // Arrange
-            var originalName = "Original Name";
-            var parameter = new BudgetExpenseCategory { CategoryName = originalName };
+            const string ORIGINAL_NAME = "Original Name";
+            var parameter = new BudgetExpenseCategory { CategoryName = ORIGINAL_NAME };
 
             _mockExpenseGroupDialogService.Setup(x => x.ShowDialogAsync(
                 _mockContentDialogService.Object, 
@@ -94,7 +94,7 @@ namespace MyMoney.Tests.ViewModelTests.BudgetViewModel
             await _viewModel.EditExpenseGroupCommand.ExecuteAsync(parameter);
 
             // Assert
-            Assert.AreEqual(originalName, parameter.CategoryName);
+            Assert.AreEqual(ORIGINAL_NAME, parameter.CategoryName);
         }
 
         [TestMethod]
