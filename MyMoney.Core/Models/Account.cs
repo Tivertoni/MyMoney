@@ -14,7 +14,7 @@ namespace MyMoney.Core.Models
         private ObservableCollection<Transaction> _transactions = [];
 
         [ObservableProperty]
-        private string _accountName = "";
+        private string _accountName = string.Empty;
 
         [ObservableProperty]
         private Currency _total = new (0m);
